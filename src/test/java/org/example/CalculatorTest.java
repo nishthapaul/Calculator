@@ -16,4 +16,16 @@ class CalculatorTest {
 
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    void shouldMultiplyTwoNumbers() {
+        int firstNumber = 2;
+        int secondNumber = 4;
+        int actualResult = 8;
+
+        Calculator calculator = new Calculator();
+        int expectedResult = calculator.multiply(firstNumber, secondNumber);
+
+        assertEquals(expectedResult, actualResult);
+    }
 }
