@@ -42,13 +42,25 @@ class CalculatorTest {
     }
 
     @Test
-    void shouldDivideTwoNumbers() {
+    void shouldGiveWholeNumberWhenBiggerDividesSmaller() {
         int firstNumber = 6;
         int secondNumber = 2;
-        int actualResult = 3;
+        double actualResult = 3;
 
         Calculator calculator = new Calculator();
-        int expectedResult = calculator.divide(firstNumber, secondNumber);
+        double expectedResult = calculator.divide(firstNumber, secondNumber);
+
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    void shouldGiveDecimalNumberWhenSmallerDividesBigger() {
+        int firstNumber = 2;
+        int secondNumber = 4;
+        double actualResult = 0.5;
+
+        Calculator calculator = new Calculator();
+        double expectedResult = calculator.divide(firstNumber, secondNumber);
 
         assertEquals(expectedResult, actualResult);
     }

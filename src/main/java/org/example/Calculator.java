@@ -13,7 +13,7 @@ public class Calculator {
         return operand1 - operand2;
     }
 
-    int divide(int operand1, int operand2) {
-        return operand1 / operand2;
+    double divide(int operand1, int operand2) {
+        return (double) operand1 / operand2;
     }
 }
