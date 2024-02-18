@@ -28,4 +28,16 @@ class CalculatorTest {
 
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    void shouldSubtractTwoNumbers() {
+        int firstNumber = 2;
+        int secondNumber = 4;
+        int actualResult = -2;
+
+        Calculator calculator = new Calculator();
+        int expectedResult = calculator.subtract(firstNumber, secondNumber);
+
+        assertEquals(expectedResult, actualResult);
+    }
 }
