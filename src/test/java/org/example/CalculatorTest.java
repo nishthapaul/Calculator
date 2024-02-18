@@ -1,8 +1,10 @@
 package org.example;
 
+import org.example.exceptions.DivisionByZeroException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculatorTest {
     @Test
@@ -42,7 +44,7 @@ class CalculatorTest {
     }
 
     @Test
-    void shouldGiveWholeNumberWhenBiggerDividesSmaller() {
+    void shouldGiveWholeNumberWhenBiggerDividesSmaller() throws DivisionByZeroException {
         int firstNumber = 6;
         int secondNumber = 2;
         double actualResult = 3;
@@ -54,7 +56,7 @@ class CalculatorTest {
     }
 
     @Test
-    void shouldGiveDecimalNumberWhenSmallerDividesBigger() {
+    void shouldGiveDecimalNumberWhenSmallerDividesBigger() throws DivisionByZeroException {
         int firstNumber = 2;
         int secondNumber = 4;
         double actualResult = 0.5;
@@ -67,13 +69,7 @@ class CalculatorTest {
 
     @Test
     void shouldThrowExceptionOnDivisionByZero() {
-        int firstNumber = 2;
-        int secondNumber = 0;
-        double actualResult = 0;
-
-        Calculator calculator = new Calculator();
-        double expectedResult = calculator.divide(firstNumber, secondNumber);
-
-        assertEquals(expectedResult, actualResult);
+        int number = 2;
+        assertThrows(DivisionByZeroException.class, () -> new Calculator().divide(number, 0));
     }
 }
