@@ -18,7 +18,14 @@ pipeline {
                     sh 'mvn test'
                 }
           }
+
+          stage ("Create Docker Image") {
+                steps {
+                    sh 'docker build -t nishthapaul/calculator-app .'
+                }
+          }
     }
+
     post {
         failure {
             script {
