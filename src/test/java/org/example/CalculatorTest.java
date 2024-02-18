@@ -40,4 +40,16 @@ class CalculatorTest {
 
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    void shouldDivideTwoNumbers() {
+        int firstNumber = 6;
+        int secondNumber = 2;
+        int actualResult = 3;
+
+        Calculator calculator = new Calculator();
+        int expectedResult = calculator.divide(firstNumber, secondNumber);
+
+        assertEquals(expectedResult, actualResult);
+    }
 }

@@ -12,4 +12,8 @@ public class Calculator {
     int subtract(int operand1, int operand2) {
         return operand1 - operand2;
     }
+
+    int divide(int operand1, int operand2) {
+        return operand1 / operand2;
+    }
 }
