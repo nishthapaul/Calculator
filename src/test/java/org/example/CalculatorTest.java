@@ -64,4 +64,16 @@ class CalculatorTest {
 
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    void shouldThrowExceptionOnDivisionByZero() {
+        int firstNumber = 2;
+        int secondNumber = 0;
+        double actualResult = 0;
+
+        Calculator calculator = new Calculator();
+        double expectedResult = calculator.divide(firstNumber, secondNumber);
+
+        assertEquals(expectedResult, actualResult);
+    }
 }
