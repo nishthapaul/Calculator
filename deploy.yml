@@ -1,0 +1,20 @@
+- name: Pull Docker Image from Docker Hub
+  hosts: localhost
+  become: false
+  connection: local
+  tasks:
+    - name: Pull Docker Image
+      docker_image:
+        name: 'nishthapaul/calculator-app'
+        source: pull
+      register: docker_pull_result
+
+    - name: Display Docker Pull Result
+      debug:
+        var: docker_pull_result
+
+    - name: Removing container if already exists
+      shell: docker rm -f app-container
+
+    - name: Running container
+      shell: docker run -it -d --name app-container nishthapaul/calculator-app
