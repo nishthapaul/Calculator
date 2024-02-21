@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+        DOCKERHUB_USERNAME='nishthapaul'
+    }
     stages {
           stage ("Clone Git") {
                 steps {
@@ -22,6 +26,15 @@ pipeline {
           stage ("Create Docker Image") {
                 steps {
                     sh 'docker build -t nishthapaul/calculator-app .'
+                }
+          }
+
+          stage ("Push docker image") {
+                steps {
+                    script {
+                        sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_CREDENTIALS'
+                        sh 'docker push nishthapaul/calculator-app'
+                    }
                 }
           }
     }
