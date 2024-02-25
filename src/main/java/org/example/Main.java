@@ -90,6 +90,16 @@ public class Main {
                     }
                     break;
                 }
+                case 7: {
+                    System.out.println("- Power Operation selected       -");
+                    System.out.println("- ------------------------------------ -");
+                    System.out.print("- Enter the first operand : ");
+                    int n1 = Integer.parseInt(br.readLine());
+                    System.out.print("- Enter the second operand : ");
+                    int n2 = Integer.parseInt(br.readLine());
+                    result = calculator.power(n1, n2);
+                    break;
+                }
             }
             if ( success ) {
                 System.out.println("- The output is ::: " + result);

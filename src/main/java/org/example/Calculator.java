@@ -31,4 +31,8 @@ public class Calculator {
         }
         return operand * factorial(operand - 1);
     }
+
+    double power(int base, int pow) {
+        return Math.pow(base, pow);
+    }
 }

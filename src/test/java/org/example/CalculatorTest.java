@@ -116,4 +116,16 @@ class CalculatorTest {
         int number = -1;
         assertThrows(IllegalArgumentException.class, () -> new Calculator().factorial(number));
     }
+
+    @Test
+    void shouldGivePowerOfTwoNumbers() {
+        int firstNumber = 2;
+        int secondNumber = 4;
+        double actualResult = 16;
+
+        Calculator calculator = new Calculator();
+        double expectedResult = calculator.power(firstNumber, secondNumber);
+
+        assertEquals(expectedResult, actualResult);
+    }
 }
