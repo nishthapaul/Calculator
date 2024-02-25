@@ -60,4 +60,15 @@ class CalculatorTest {
         int number = 2;
         assertThrows(DivisionByZeroException.class, () -> new Calculator().divide(number, 0));
     }
+
+    @Test
+    void shouldGiveSquareRootOfANumber() {
+        double number = 4;
+        double actualResult = 2;
+
+        Calculator calculator = new Calculator();
+        double expectedResult = calculator.squareRoot(number);
+
+        assertEquals(expectedResult, actualResult);
+    }
 }

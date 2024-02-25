@@ -16,4 +16,8 @@ public class Calculator {
             throw new DivisionByZeroException();
         return (double) operand1 / operand2;
     }
+
+    double squareRoot(double operand) {
+        return Math.sqrt(operand);
+    }
 }

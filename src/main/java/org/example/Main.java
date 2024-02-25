@@ -64,8 +64,16 @@ public class Main {
                     }
                     break;
                 }
+                case 4: {
+                    System.out.println("- Square Root Operation selected       -");
+                    System.out.println("- ------------------------------------ -");
+                    System.out.print("- Enter the operand : ");
+                    double n = Double.parseDouble(br.readLine());
+                    result = calculator.squareRoot(n);
+                    break;
+                }
             }
-            if (success) {
+            if ( success ) {
                 System.out.println("- The output is ::: " + result);
             }
             System.out.println("- ------------------------------------ -");
