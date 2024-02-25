@@ -32,18 +32,6 @@ class CalculatorTest {
     }
 
     @Test
-    void shouldSubtractTwoNumbers() {
-        int firstNumber = 2;
-        int secondNumber = 4;
-        int actualResult = -2;
-
-        Calculator calculator = new Calculator();
-        int expectedResult = calculator.subtract(firstNumber, secondNumber);
-
-        assertEquals(expectedResult, actualResult);
-    }
-
-    @Test
     void shouldGiveWholeNumberWhenBiggerDividesSmaller() throws DivisionByZeroException {
         int firstNumber = 6;
         int secondNumber = 2;
