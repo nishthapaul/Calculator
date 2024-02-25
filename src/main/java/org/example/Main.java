@@ -19,9 +19,9 @@ public class Main {
             System.out.println("- 2. Multiplication                    -");
             System.out.println("- 3. Division                          -");
             System.out.println("- 4. Square Root                       -");
-            System.out.println("- 5. Power                             -");
+            System.out.println("- 5. Factorial                         -");
             System.out.println("- 6. Natural Logarithm (base e)        -");
-            System.out.println("- 7. Division                          -");
+            System.out.println("- 7. Power                             -");
             System.out.println("- ------------------------------------ -");
             System.out.print("- Please enter your Choice : ");
             operation = Integer.parseInt(br.readLine());
@@ -69,7 +69,12 @@ public class Main {
                     System.out.println("- ------------------------------------ -");
                     System.out.print("- Enter the operand : ");
                     double n = Double.parseDouble(br.readLine());
-                    result = calculator.squareRoot(n);
+                    try {
+                        result = calculator.squareRoot(n);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                        success = false;
+                    }
                     break;
                 }
             }

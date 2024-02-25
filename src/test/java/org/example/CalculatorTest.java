@@ -71,4 +71,43 @@ class CalculatorTest {
 
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    void shouldThrowExceptionOn() {
+        double number = -1;
+        assertThrows(IllegalArgumentException.class, () -> new Calculator().squareRoot(number));
+    }
+
+    @Test
+    void shouldReturnOneForFactorialOfOne() {
+        int number = 1;
+        int actualResult = 1;
+        Calculator calculator = new Calculator();
+
+        int expectedValue = calculator.factorial(number);
+
+        assertEquals(expectedValue, actualResult);
+    }
+
+    @Test
+    void shouldReturnTwoForFactorialOfTwo() {
+        int number = 2;
+        int actualResult = 2;
+        Calculator calculator = new Calculator();
+
+        int expectedValue = calculator.factorial(number);
+
+        assertEquals(expectedValue, actualResult);
+    }
+
+    @Test
+    void shouldReturnSixForFactorialOfThree() {
+        int number = 3;
+        int actualResult = 6;
+        Calculator calculator = new Calculator();
+
+        int expectedValue = calculator.factorial(number);
+
+        assertEquals(expectedValue, actualResult);
+    }
 }

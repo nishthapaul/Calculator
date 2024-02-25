@@ -17,7 +17,16 @@ public class Calculator {
         return (double) operand1 / operand2;
     }
 
-    double squareRoot(double operand) {
+    double squareRoot(double operand) throws IllegalArgumentException {
+        if (operand < 0)
+            throw new IllegalArgumentException("Cannot compute square root of a negative number");
         return Math.sqrt(operand);
+    }
+
+    int factorial(int number) {
+        if (number == 0) {
+            return 1;
+        }
+        return number * factorial(number - 1);
     }
 }
