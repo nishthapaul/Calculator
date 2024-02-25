@@ -23,10 +23,12 @@ public class Calculator {
         return Math.sqrt(operand);
     }
 
-    int factorial(int number) {
-        if (number == 0) {
+    int factorial(int operand) throws IllegalArgumentException {
+        if (operand < 0)
+            throw new IllegalArgumentException("Cannot compute square root of a negative number");
+        if (operand == 0) {
             return 1;
         }
-        return number * factorial(number - 1);
+        return operand * factorial(operand - 1);
     }
 }

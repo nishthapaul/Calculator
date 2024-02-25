@@ -73,7 +73,7 @@ class CalculatorTest {
     }
 
     @Test
-    void shouldThrowExceptionOn() {
+    void shouldThrowExceptionOnNegativeInputToSqrt() {
         double number = -1;
         assertThrows(IllegalArgumentException.class, () -> new Calculator().squareRoot(number));
     }
@@ -109,5 +109,11 @@ class CalculatorTest {
         int expectedValue = calculator.factorial(number);
 
         assertEquals(expectedValue, actualResult);
+    }
+
+    @Test
+    void shouldThrowExceptionOnNegativeInputToFactorial() {
+        int number = -1;
+        assertThrows(IllegalArgumentException.class, () -> new Calculator().factorial(number));
     }
 }

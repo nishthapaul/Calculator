@@ -77,6 +77,19 @@ public class Main {
                     }
                     break;
                 }
+                case 5: {
+                    System.out.println("- Factorial Operation selected       -");
+                    System.out.println("- ------------------------------------ -");
+                    System.out.print("- Enter the operand : ");
+                    int n = Integer.parseInt(br.readLine());
+                    try {
+                        result = calculator.factorial(n);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                        success = false;
+                    }
+                    break;
+                }
             }
             if ( success ) {
                 System.out.println("- The output is ::: " + result);
