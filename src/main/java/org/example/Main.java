@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.exceptions.DivisionByZeroException;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -24,7 +26,8 @@ public class Main {
             System.out.print("- Please enter your Choice : ");
             operation = Integer.parseInt(br.readLine());
             Calculator calculator = new Calculator();
-            int result = 0;
+            double result = 0;
+            boolean success = true;
             switch (operation) {
                 case 1: {
                     System.out.println("- Addition Operation selected          -");
@@ -34,11 +37,39 @@ public class Main {
                     System.out.print("- Enter the second operand : ");
                     int n2 = Integer.parseInt(br.readLine());
                     result = calculator.add(n1, n2);
+                    break;
+                }
+                case 2: {
+                    System.out.println("- Multiplication Operation selected    -");
+                    System.out.println("- ------------------------------------ -");
+                    System.out.print("- Enter the first operand : ");
+                    int n1 = Integer.parseInt(br.readLine());
+                    System.out.print("- Enter the second operand : ");
+                    int n2 = Integer.parseInt(br.readLine());
+                    result = calculator.multiply(n1, n2);
+                    break;
+                }
+                case 3: {
+                    System.out.println("- Division Operation selected          -");
+                    System.out.println("- ------------------------------------ -");
+                    System.out.print("- Enter the first operand : ");
+                    int n1 = Integer.parseInt(br.readLine());
+                    System.out.print("- Enter the second operand : ");
+                    int n2 = Integer.parseInt(br.readLine());
+                    try {
+                        result = calculator.divide(n1, n2);
+                    } catch (DivisionByZeroException e) {
+                        System.out.println("- Division By Zero is not allowed");
+                        success = false;
+                    }
+                    break;
                 }
             }
-            System.out.println("- The output is ::: " + result);
+            if (success) {
+                System.out.println("- The output is ::: " + result);
+            }
             System.out.println("- ------------------------------------ -");
-            System.out.print("Do you want to continue (y/n) ? : ");
+            System.out.print("- Do you want to continue (y/n) ? : ");
             ch = br.readLine().charAt(0);
         } while (ch != 'n');
         System.out.println("---------------------- -----------------");
