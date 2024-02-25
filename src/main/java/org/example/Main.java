@@ -90,6 +90,19 @@ public class Main {
                     }
                     break;
                 }
+                case 6: {
+                    System.out.println("- Logarithmic Operation selected       -");
+                    System.out.println("- ------------------------------------ -");
+                    System.out.print("- Enter the operand : ");
+                    int n = Integer.parseInt(br.readLine());
+                    try {
+                        result = calculator.factorial(n);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                        success = false;
+                    }
+                    break;
+                }
                 case 7: {
                     System.out.println("- Power Operation selected       -");
                     System.out.println("- ------------------------------------ -");

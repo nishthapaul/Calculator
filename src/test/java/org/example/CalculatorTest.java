@@ -128,4 +128,21 @@ class CalculatorTest {
 
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    void shouldReturnLogarithmicOfGivenNumber() {
+        int number = 3;
+        double actualResult = Math.log(3);
+        Calculator calculator = new Calculator();
+
+        double expectedValue = calculator.log(number);
+
+        assertEquals(expectedValue, actualResult);
+    }
+
+    @Test
+    void shouldThrowExceptionOnNegativeInputToLogarithm() {
+        int number = -1;
+        assertThrows(IllegalArgumentException.class, () -> new Calculator().log(number));
+    }
 }

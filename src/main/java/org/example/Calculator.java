@@ -25,11 +25,17 @@ public class Calculator {
 
     int factorial(int operand) throws IllegalArgumentException {
         if (operand < 0)
-            throw new IllegalArgumentException("Cannot compute square root of a negative number");
+            throw new IllegalArgumentException("Cannot compute factorial of a negative number");
         if (operand == 0) {
             return 1;
         }
         return operand * factorial(operand - 1);
+    }
+
+    double log(double operand) throws IllegalArgumentException {
+        if (operand <= 0)
+            throw new IllegalArgumentException("Cannot compute logarithmic (base e) of a non-positive number");
+        return Math.log(operand);
     }
 
     double power(int base, int pow) {
