@@ -63,6 +63,9 @@ pipeline {
     }
 
     post {
+        success {
+            jacoco()
+        }
         failure {
             script {
                 def jenkinsBuildUrl = "http://localhost:8080/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/console"
