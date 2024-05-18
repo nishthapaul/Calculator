@@ -3,6 +3,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS=credentials('dockerhub')
         DOCKERHUB_USERNAME='nishthapaul'
+        SCANNER_HOME=tool 'sonar-scanner'
     }
     stages {
           stage ("Clone Git") {
@@ -16,6 +17,22 @@ pipeline {
                     sh 'mvn clean install'
                 }
           }
+
+          stage ("SonarQube Analysis") {
+                  steps {
+                        dir('Backend') {
+                            withSonarQubeEnv('sonar-server') {
+                                sh ''' $SCANNER_HOME/bin/sonar-scanner \
+                                -Dsonar.projectName=Calculator \
+                                -Dsonar.java.binaries=. \
+                                -Dsonar.sources=/src/main/java \
+                                -Dsonar.sourceEncoding=UTF-8 \
+                                -Dsonar.language=java \
+                                -Dsonar.projectKey=Calculator '''
+                                }
+                         }
+                   }
+            }
 
           stage ("Run tests") {
                 steps {
