@@ -24,7 +24,7 @@ pipeline {
                             sh ''' $SCANNER_HOME/bin/sonar-scanner \
                             -Dsonar.projectName=Calculator \
                             -Dsonar.java.binaries=. \
-                            -Dsonar.sources=/src/main/java \
+                            -Dsonar.sources=src/main/java \
                             -Dsonar.sourceEncoding=UTF-8 \
                             -Dsonar.language=java \
                             -Dsonar.projectKey=Calculator -X'''
