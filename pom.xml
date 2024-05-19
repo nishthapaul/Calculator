@@ -72,7 +72,7 @@
                                         </limit>
                                     </limits>
                                     <excludes>
-                                          <exclude>**/DivisionByZeroException.class</exclude>
+                                          <exclude>**/*DivisionByZeroException.class</exclude>
                                      </excludes>
                                 </rule>
                             </rules>
