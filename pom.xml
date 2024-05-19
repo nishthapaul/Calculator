@@ -72,7 +72,7 @@
                                         </limit>
                                     </limits>
                                     <excludes>
-                                          <exclude>org.example.exceptions.DivisionByZeroException.java</exclude>
+                                          <exclude>org.example.exceptions.DivisionByZeroException.class</exclude>
                                      </excludes>
                                 </rule>
                             </rules>
