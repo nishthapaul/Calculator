@@ -12,9 +12,15 @@ pipeline {
                 }
           }
 
+          stage ("Compile via Maven") {
+                steps {
+                    sh 'mvn clean compile'
+                }
+          }
+
           stage ("Build via Maven") {
                 steps {
-                    sh 'mvn clean install'
+                    sh 'mvn install'
                 }
           }
 
