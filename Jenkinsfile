@@ -27,7 +27,7 @@ pipeline {
                             -Dsonar.sources=/src/main/java \
                             -Dsonar.sourceEncoding=UTF-8 \
                             -Dsonar.language=java \
-                            -Dsonar.projectKey=Calculator '''
+                            -Dsonar.projectKey=Calculator -X'''
                             }
                    }
             }
