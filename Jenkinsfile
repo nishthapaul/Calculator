@@ -68,7 +68,7 @@ pipeline {
 
     post {
         success {
-            jacoco sourceExclusionPattern: '**/DivisionByZeroException.java'
+            jacoco sourceExclusionPattern: '**/DivisionByZeroException.class'
         }
         failure {
             script {
