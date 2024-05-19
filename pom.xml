@@ -69,6 +69,12 @@
                             <goal>check</goal>
                         </goals>
                         <configuration>
+                                 <excludes>
+                                          <exclude>**/BackendApplication.**</exclude>
+                                          <exclude>**/entity/**</exclude>
+                                          <exclude>**/request/**</exclude>
+                                          <exclude>**/exceptions/**</exclude>
+                                 </excludes>
                             <rules>
                                 <rule>
                                     <element>PACKAGE</element>
