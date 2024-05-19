@@ -42,14 +42,6 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.12</version>
-                <configuration>
-                    <excludes>
-                        <exclude>**/BackendApplication.**</exclude>
-                        <exclude>**/entity/**</exclude>
-                        <exclude>**/request/**</exclude>
-                        <exclude>**/exceptions/**</exclude>
-                    </excludes>
-                </configuration>
                 <executions>
                     <execution>
                         <goals>
@@ -69,12 +61,6 @@
                             <goal>check</goal>
                         </goals>
                         <configuration>
-                                 <excludes>
-                                          <exclude>**/BackendApplication.**</exclude>
-                                          <exclude>**/entity/**</exclude>
-                                          <exclude>**/request/**</exclude>
-                                          <exclude>**/exceptions/**</exclude>
-                                 </excludes>
                             <rules>
                                 <rule>
                                     <element>PACKAGE</element>
@@ -85,6 +71,9 @@
                                             <minimum>0.10</minimum>
                                         </limit>
                                     </limits>
+                                    <excludes>
+                                          <exclude>**/exceptions/**</exclude>
+                                     </excludes>
                                 </rule>
                             </rules>
                         </configuration>
